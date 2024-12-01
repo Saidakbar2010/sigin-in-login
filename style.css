@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+ }
+.form{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(126, 174, 240);
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+}
+.tab_label{
+    color: gray;
+    user-select:none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.first{
+    margin-right: 10px;
+}
+.tab:checked + .tab_label{
+    color: white;
+
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+  
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .main_login {
+    position: relative;
+}
+.sign-in {
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 0.5s linear;
+}
+.sign-up {
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 0.5s linear;
+}
+.tab:checked + .tab_label + .tab + .tab_label + .main_login > .sign-in{
+    transform: rotateY(0);
+}
+.tab:checked + .tab_label + .main_login > .sign-up{
+    transform: rotateY(0 );
+} 
